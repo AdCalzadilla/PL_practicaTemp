@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/alu0100288216/PL_practicaTemp",
   "devDependencies": {
+    "blanket": "^1.1.6",
     "chai": "^2.0.0",
     "mocha": "*"
   }
