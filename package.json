@@ -8,7 +8,6 @@
   },
   "scripts": {
     "opentest": "open tests/index.html"
-    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
