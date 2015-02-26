@@ -1,5 +1,6 @@
 var gulp    = require('gulp'),
     gutil   = require('gulp-util'),
+    karma   = require('gulp-karma');
     uglify  = require('gulp-uglify'),
     concat  = require('gulp-concat');
 var del     = require('del');
@@ -22,4 +23,17 @@ gulp.task('minify', function () {
 
 gulp.task('clean', function(cb) {
   del(['minified/*'], cb);
+});
+
+gulp.task('test', function() {
+  // Be sure to return the stream
+  return gulp.src([])
+    .pipe(karma({
+      configFile: 'karma.conf.js',
+      action: 'run'
+    }))
+    .on('error', function(err) {
+      // Make sure failed tests cause gulp to exit non-zero
+      throw err;
+    });
 });

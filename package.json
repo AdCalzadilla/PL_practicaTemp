@@ -28,6 +28,7 @@
     "chai": "^2.0.0",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.4.3",
+    "gulp-karma": "0.0.4",
     "gulp-util": "^3.0.3",
     "jasmine-core": "^2.2.0",
     "karma": "^0.12.31",
