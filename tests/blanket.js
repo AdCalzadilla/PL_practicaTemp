@@ -405,7 +405,7 @@ function(a) {
                         l += "\f";
                         break;
                     case "v":
-                        l += ";
+                        l += "";
                         break;
                     default:
                         e(d) ? (f = "01234567".indexOf(d), 0 !== f && (m = !0), lc > ic && e(gc[ic]) && (m = !0, f = 8 * f + "01234567".indexOf(gc[ic++]), "0123".indexOf(d) >= 0 && lc > ic && e(gc[ic]) && (f = 8 * f + "01234567".indexOf(gc[ic++]))), l += String.fromCharCode(f)) : l += d
