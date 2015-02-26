@@ -7,7 +7,3 @@ before_script:
 branches:
   only:
     - travisnguage: node_js
-node_js:
- -"0.10"nguage: node_js
-node_js:
- -"0.10"
