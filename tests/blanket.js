@@ -1998,13 +1998,13 @@ function () {
     var a = {}, b = Array.prototype.slice,
         c = b.call(document.scripts);
     b.call(c[c.length - 1].attributes).forEach(function (b) {
-        if ("data-cover-only" === b.nodeName && (a.filter = b.nodeValue), "data-cover-never" === b.nodeName && (a.antifilter = b.nodeValue), "data-cover-reporter" === b.nodeName && (a.reporter = b.nodeValue), "data-cover-adapter" === b.nodeName && (a.adapter = b.nodeValue), "data-cover-loader" === b.nodeName && (a.loader = b.nodeValue), "data-cover-timeout" === b.nodeName && (a.timeout = b.nodeValue), "data-cover-modulepattern" === b.nodeName && (a.modulePattern = b.nodeValue), "data-cover-reporter-options" === b.nodeName) try {
-            a.reporter_options = JSON.parse(b.nodeValue)
+        if ("data-cover-only" === b.nodeName && (a.filter = b.value), "data-cover-never" === b.nodeName && (a.antifilter = b.value), "data-cover-reporter" === b.nodeName && (a.reporter = b.value), "data-cover-adapter" === b.nodeName && (a.adapter = b.value), "data-cover-loader" === b.nodeName && (a.loader = b.value), "data-cover-timeout" === b.nodeName && (a.timeout = b.value), "data-cover-modulepattern" === b.nodeName && (a.modulePattern = b.value), "data-cover-reporter-options" === b.nodeName) try {
+            a.reporter_options = JSON.parse(b.value)
         } catch (c) {
             if (blanket.options("debug")) throw new Error("Invalid reporter options.  Must be a valid stringified JSON object.")
         }
-        if ("data-cover-testReadyCallback" === b.nodeName && (a.testReadyCallback = b.nodeValue), "data-cover-customVariable" === b.nodeName && (a.customVariable = b.nodeValue), "data-cover-flags" === b.nodeName) {
-            var d = " " + b.nodeValue + " ";
+        if ("data-cover-testReadyCallback" === b.nodeName && (a.testReadyCallback = b.value), "data-cover-customVariable" === b.nodeName && (a.customVariable = b.value), "data-cover-flags" === b.nodeName) {
+            var d = " " + b.value + " ";
             d.indexOf(" ignoreError ") > -1 && (a.ignoreScriptError = !0), d.indexOf(" autoStart ") > -1 && (a.autoStart = !0), d.indexOf(" ignoreCors ") > -1 && (a.ignoreCors = !0), d.indexOf(" branchTracking ") > -1 && (a.branchTracking = !0), d.indexOf(" sourceURL ") > -1 && (a.sourceURL = !0), d.indexOf(" debug ") > -1 && (a.debug = !0), d.indexOf(" engineOnly ") > -1 && (a.engineOnly = !0), d.indexOf(" commonJS ") > -1 && (a.commonJS = !0), d.indexOf(" instrumentCache ") > -1 && (a.instrumentCache = !0)
         }
     }), blanket.options(a), "undefined" != typeof requirejs && blanket.options("existingRequireJS", !0), blanket.options("commonJS") && (blanket._commonjs = {})
@@ -2047,14 +2047,14 @@ function (a) {
                     var f = a.options("antifilter");
                     c = b.call(document.scripts).filter(function (c) {
                         return 1 === b.call(c.attributes).filter(function (b) {
-                            return "src" === b.nodeName && a.utils.matchPatternAttribute(b.nodeValue, e) && ("undefined" == typeof f || !a.utils.matchPatternAttribute(b.nodeValue, f))
+                            return "src" === b.nodeName && a.utils.matchPatternAttribute(b.value, e) && ("undefined" == typeof f || !a.utils.matchPatternAttribute(b.value, f))
                         }).length
                     })
                 } else c = b.call(document.querySelectorAll("script[data-cover]"));
                 return d = c.map(function (c) {
                     return a.utils.qualifyURL(b.call(c.attributes).filter(function (a) {
                         return "src" === a.nodeName
-                    })[0].nodeValue)
+                    })[0].value)
                 }), e || a.options("filter", "['" + d.join("','") + "']"), d
             },
             loadAll: function (b, c) {
